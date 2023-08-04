@@ -29,7 +29,7 @@ transform = T.Compose(
     )
 url = "https://images.ctfassets.net/4f3rgqwzdznj/44QovdzRYnjX4e0nv4lDJ8/1093abd8378d931144d71b16cbbdba1d/vet_hugs_cat_in_clinic_1332755026.jpg"
 image_source = Image.open(requests.get(url, stream=True).raw).convert("RGB")
-image = np.asarray(image_source)
+raw_image = np.asarray(image_source)
 image_transformed, _ = transform(image_source, None)
 
 
@@ -81,6 +81,8 @@ else:
 
 model = model.to(device)
 image = image_transformed.to(device)
+
+print(image)
 
 for name, param in model.named_parameters():
     print(name , param.shape)
