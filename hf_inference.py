@@ -82,6 +82,9 @@ else:
 model = model.to(device)
 image = image_transformed.to(device)
 
+for name, param in model.named_parameters():
+    print(name , param.shape)
+
 with torch.no_grad():
     outputs = model(image[None], captions=[caption])
 
