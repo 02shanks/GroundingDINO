@@ -12,4 +12,4 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 # ------------------------------------------------------------------------
 
-from .groundingdino import build_groundingdino
+from .groundingdino import build_groundingdino, GroundingDINO, build_transformer
