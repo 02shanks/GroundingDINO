@@ -88,10 +88,9 @@ print(image.shape)
 #     print(name , param.shape)
 
 pixel_values = image.unsqueeze(0) #"unsqueezeing" the tensor
-captions=[caption]
 
 with torch.no_grad():
-    outputs = model.forward(samples=pixel_values, targets=captions)
+    outputs = model.forward(samples=pixel_values, captions=[caption])
 
 prediction_logits = outputs["pred_logits"].cpu().sigmoid()[0]  # prediction_logits.shape = (nq, 256)
 prediction_boxes = outputs["pred_boxes"].cpu()[0]  # prediction_boxes.shape = (nq, 4)
