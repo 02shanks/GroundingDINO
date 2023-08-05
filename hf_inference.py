@@ -118,3 +118,6 @@ else:
         for logit
         in logits
     ]
+
+print("phrases", phrases)   
+print("boxes", boxes)
