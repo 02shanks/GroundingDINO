@@ -121,3 +121,4 @@ else:
 
 print("phrases", phrases)   
 print("boxes", boxes)
+print("logits", logits.shape, logits)
